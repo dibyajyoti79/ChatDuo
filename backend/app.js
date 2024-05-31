@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { app } from "./socket/socket.js";
+import { app, server } from "./socket/socket.js";
 
 app.use(
   cors({
@@ -23,4 +23,4 @@ app.use("/api/v1/messages", messageRoutes);
 app.use("/api/v1/users", userRoutes);
 // error handler middleware
 app.use(errorMiddleware);
-export { app };
+export { app, server };
