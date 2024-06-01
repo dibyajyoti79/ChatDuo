@@ -4,7 +4,13 @@ import toast from "react-hot-toast";
 
 const useSendMessage = () => {
   const [loading, setLoading] = useState(false);
-  const { messages, setMessages, selectedConversation } = useConversation();
+  const {
+    messages,
+    setMessages,
+    selectedConversation,
+    setReArrange,
+    reArrange,
+  } = useConversation();
 
   const sendMessage = async (message) => {
     setLoading(true);
@@ -25,6 +31,7 @@ const useSendMessage = () => {
       }
 
       setMessages([...messages, data.data]);
+      setReArrange(!reArrange);
     } catch (error) {
       toast.error(error.message);
     } finally {
