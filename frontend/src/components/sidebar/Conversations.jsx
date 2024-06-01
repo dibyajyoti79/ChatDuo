@@ -115,6 +115,15 @@ const Conversations = () => {
         />
       ))}
 
+      {conversations.length === 0 ? (
+        <div className="flex items-center justify-center w-full h-full">
+          <div className="px-4 text-center sm:text-lg md:text-xl text-gray-200 font-semibold flex flex-col items-center gap-2">
+            <p>No friends yet</p>
+            <p>Find friends and start chatting.</p>
+          </div>
+        </div>
+      ) : null}
+
       {loading ? (
         <span className="loading loading-spinner mx-auto"></span>
       ) : null}
